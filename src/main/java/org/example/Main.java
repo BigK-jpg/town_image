@@ -9,7 +9,7 @@ import java.io.IOException;
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        File inputImage = new File("C:/Users/sogyo/Downloads/town4.png");
+        File inputImage = new File("C:/Users/sogyo/Downloads/dungeon1.png");
         BufferedImage original = ImageIO.read(inputImage);
 
         int maxZoom = 5; // Or however deep you want to go
@@ -32,7 +32,7 @@ public class Main {
                     int yPos = y * tileSize;
 
                     BufferedImage tile = scaled.getSubimage(xPos, yPos, tileSize, tileSize);
-                    File output = new File("tiles/" + z + "/" + x + "/" + y + ".png");
+                    File output = new File("dungeon/" + z + "/" + x + "/" + y + ".png");
                     output.getParentFile().mkdirs();
                     ImageIO.write(tile, "png", output);
                 }
